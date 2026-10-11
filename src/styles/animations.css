@@ -1,4 +1,4 @@
-@keyframes fade-up {
+/* @keyframes fade-up {
   from {
     opacity: 0;
     transform: translateY(16px);
@@ -60,12 +60,127 @@
    PORTFOLIO V2 — VISUAL POLISH
    ======================================== */
 
-/* Subtle entrance animation */
+/* Subtle entrance animation 
 .animate-fade-up {
   animation: fade-up 650ms ease both;
 }
 
 /* Smooth hover interactions */
+/*.card,
+.btn,
+.navbar-link,
+.navbar-social,
+.projects-filter {
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease,
+    box-shadow 220ms ease,
+    color 220ms ease;
+}
+*/
+/* Restrained card hover */
+/*.card:hover {
+  border-color: var(--color-border-strong);
+}
+*/
+
+/* Keyboard focus should remain visible */
+/*.card a:focus-visible,
+.card button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+*/
+
+/* Avoid hover movement on touch devices */
+/*@media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Reduced-motion preference */
+/*@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-up *,
+  .card,
+  .btn,
+  .navbar-link,
+  .navbar-social,
+  .projects-filter {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+*/
+
+
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.fade-up {
+  animation: fade-up 700ms ease both;
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.pulse {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Portfolio V2 visual polish */
+.animate-fade-up {
+  animation: fade-up 650ms ease both;
+}
+
 .card,
 .btn,
 .navbar-link,
@@ -79,26 +194,22 @@
     color 220ms ease;
 }
 
-/* Restrained card hover */
 .card:hover {
   border-color: var(--color-border-strong);
 }
 
-/* Keyboard focus should remain visible */
 .card a:focus-visible,
 .card button:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 4px;
 }
 
-/* Avoid hover movement on touch devices */
 @media (hover: hover) and (pointer: fine) {
   .btn:hover {
     transform: translateY(-2px);
   }
 }
 
-/* Reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-up,
   .animate-fade-up *,

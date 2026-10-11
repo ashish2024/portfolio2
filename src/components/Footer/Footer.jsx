@@ -1,13 +1,18 @@
+
 import profile from '../../data/profile';
 import './Footer.css';
 
 function Footer() {
-  const currentYear = 2026;
+  const currentYear = new Date().getFullYear();
 
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: 'smooth',
     });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -17,9 +22,7 @@ function Footer() {
           <button
             className="footer-brand"
             type="button"
-            onClick={() =>
-              window.scrollTo({ top: 0, behavior: 'smooth' })
-            }
+            onClick={scrollToTop}
             aria-label="Back to top"
           >
             AS<span>.</span>
@@ -30,48 +33,37 @@ function Footer() {
           </p>
 
           <nav className="footer-links" aria-label="Footer navigation">
-            <button
-              type="button"
-              onClick={() => scrollToSection('about')}
-            >
+            <button type="button" onClick={() => scrollToSection('about')}>
               About
             </button>
 
-            <button
-              type="button"
-              onClick={() => scrollToSection('contact')}
-            >
+            <button type="button" onClick={() => scrollToSection('contact')}>
               Contact
             </button>
 
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub ↗
-            </a>
+            {profile.github && (
+              <a href={profile.github} target="_blank" rel="noopener noreferrer">
+                GitHub 
+              </a>
+            )}
 
             {profile.linkedin && (
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn ↗
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+                LinkedIn 
               </a>
             )}
           </nav>
         </div>
 
         <div className="footer-bottom">
-          <p>© {currentYear} {profile.name}. All rights reserved.</p>
+          <p>
+            © {currentYear} {profile.name}. All rights reserved.
+          </p>
+
           <button
             className="footer-back-top"
             type="button"
-            onClick={() =>
-              window.scrollTo({ top: 0, behavior: 'smooth' })
-            }
+            onClick={scrollToTop}
           >
             Back to top ↑
           </button>

@@ -5,6 +5,8 @@
 .experience-list {
   max-width: 900px;
   margin-inline: auto;
+  display: grid;
+  gap: var(--space-5);
 }
 
 .experience-card {
@@ -13,6 +15,7 @@
   grid-template-columns: 18px minmax(0, 1fr);
   gap: var(--space-5);
   padding: var(--space-7);
+  border: 1px solid var(--color-border);
   transition:
     border-color var(--transition-normal),
     background var(--transition-normal),
@@ -34,6 +37,7 @@
 .experience-marker span {
   width: 10px;
   height: 10px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: var(--color-accent);
   box-shadow: 0 0 16px rgba(138, 180, 255, 0.3);
@@ -81,12 +85,13 @@
 }
 
 .experience-summary {
-  margin: var(--space-6) 0;
+  margin: var(--space-5) 0;
   color: var(--color-text-secondary);
   line-height: 1.8;
 }
 
 .experience-technologies {
+  margin-top: var(--space-5);
   padding-top: var(--space-5);
   border-top: 1px solid var(--color-border);
 }
@@ -104,7 +109,24 @@
 .experience-tech-list {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-3);
+  gap: 10px;
+}
+
+.experience-tech-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.experience-tech-item > span:first-child {
+  font-size: 1rem;
+  line-height: 1;
 }
 
 @media (max-width: 600px) {
@@ -115,6 +137,7 @@
 
   .experience-heading {
     flex-direction: column;
+    gap: var(--space-3);
   }
 
   .experience-heading h3 {
@@ -127,11 +150,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .experience-card {
-    transition: none;
-  }
-
+  .experience-card,
   .experience-card:hover {
+    transition: none;
     transform: none;
   }
 }
