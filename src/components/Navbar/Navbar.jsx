@@ -75,23 +75,23 @@ function Navbar() {
           aria-label="Main navigation"
          
         >
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              className={`navbar-link ${
-                activeSection === item.id
-                  ? 'navbar-link-active'
-                  : ''
-              }`}
-              onClick={() => setMenuOpen(false)}
-              aria-current={
-                activeSection === item.id ? 'location' : undefined
-              }
-            >
-              {item.label}
-            </button>
-          ))}
+          
+{navItems.map((item) => (
+  <a
+    key={item.id}
+    href={`#${item.id}`}
+    className={`navbar-link ${
+      activeSection === item.id ? 'navbar-link-active' : ''
+    }`}
+    onClick={() => setMenuOpen(false)}
+    aria-current={
+      activeSection === item.id ? 'location' : undefined
+    }
+  >
+    {item.label}
+  </a>
+))}
+
         </nav>
 
         <div className="navbar-actions">
