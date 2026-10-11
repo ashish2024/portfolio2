@@ -14,7 +14,7 @@ function Contact() {
 
           <p className="section-description contact-description">
             Interested in my work or exploring software engineering
-            opportunities? Connect with me through my professional profiles.
+            opportunities? Feel free to connect with me.
           </p>
 
           <div className="contact-actions">
@@ -26,8 +26,9 @@ function Contact() {
               aria-label="Open GitHub profile in a new tab"
             >
               <span className="contact-link-label">GITHUB</span>
-              <span className="contact-link-value">View my repositories</span>
-              <span className="contact-link-arrow" aria-hidden="true">↗</span>
+              <span className="contact-link-arrow" aria-hidden="true">
+                ↗
+              </span>
             </a>
 
             {profile.linkedin && (
@@ -39,10 +40,24 @@ function Contact() {
                 aria-label="Open LinkedIn profile in a new tab"
               >
                 <span className="contact-link-label">LINKEDIN</span>
-                <span className="contact-link-value">Connect professionally</span>
-                <span className="contact-link-arrow" aria-hidden="true">↗</span>
+                <span className="contact-link-arrow" aria-hidden="true">
+                  ↗
+                </span>
               </a>
             )}
+
+            {profile.email && (
+  <a
+    className="contact-link-card"
+    href={`mailto:${profile.email}`}
+    aria-label="Send me an email"
+  >
+    <span className="contact-link-label">EMAIL</span>
+    <span className="contact-link-arrow" aria-hidden="true">
+      ↗
+    </span>
+  </a>
+)} 
           </div>
         </div>
       </div>
