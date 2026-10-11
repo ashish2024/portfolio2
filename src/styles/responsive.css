@@ -1,0 +1,122 @@
+
+/* ========================================
+   RESPONSIVE DESIGN — PORTFOLIO V2
+   ======================================== */
+
+/* Prevent horizontal overflow */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+/* Tablet and smaller screens */
+@media (max-width: 1024px) {
+  .container {
+    width: min(100% - 40px, 100%);
+  }
+
+  .section {
+    padding-top: 76px;
+    padding-bottom: 76px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .container {
+    width: min(100% - 32px, 100%);
+  }
+
+  .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  .section-description {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  /* Projects */
+  .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .projects-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .project-card {
+    min-width: 0;
+  }
+
+  .project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Common button sizing */
+  .btn {
+    max-width: 100%;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .project-card {
+    padding: 18px;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

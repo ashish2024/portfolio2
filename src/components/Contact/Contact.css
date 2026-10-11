@@ -1,0 +1,132 @@
+.contact {
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-10);
+}
+
+.contact-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(28px, 6vw, 72px);
+  text-align: center;
+  border-color: rgba(138, 180, 255, 0.2);
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(138, 180, 255, 0.09),
+      transparent 55%
+    ),
+    var(--glass-bg);
+}
+
+.contact-card .section-label {
+  margin-bottom: var(--space-4);
+}
+
+.contact-card .section-title {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.contact-description {
+  max-width: 620px;
+  margin: var(--space-4) auto 0;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-7);
+}
+
+.contact-note {
+  margin: var(--space-6) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .contact-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .contact-actions .btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-card {
+    scroll-behavior: auto;
+  }
+
+  .contact-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.contact-link-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.contact-link-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-border-strong);
+}
+
+.contact-link-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+}
+
+.contact-link-value {
+  padding-right: 24px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.contact-link-arrow {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+
+.contact-link-card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .contact-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-link-card {
+    transition: none;
+  }
+
+  .contact-link-card:hover {
+    transform: none;
+  }
+}
